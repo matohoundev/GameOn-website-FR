@@ -64,7 +64,7 @@ img {
   border-radius: 15px;
 }
 
-.topnav .icon {
+.main-navbar .icon {
   display: none;
 }
 
@@ -83,7 +83,7 @@ img {
     right: 0;
     top: 0;
   }
-  .main-navbar.responsive a {
+  .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
@@ -94,11 +94,6 @@ img {
 
  @media screen and (max-width: 540px) {
   .main-navbar a {display: none;}
-  .main-navbar a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-  }
 } 
 
 main {
