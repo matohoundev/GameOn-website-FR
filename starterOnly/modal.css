@@ -31,7 +31,6 @@ img {
 }
 
 .topnav {
-  overflow: hidden;
   margin: 3.5%;
 }
 .header-logo {
@@ -66,6 +65,7 @@ img {
 
 .main-navbar .icon {
   display: none;
+  color: #FF001B;
 }
 
 @media screen and (max-width: 768px) {
@@ -93,19 +93,9 @@ img {
 
 
  @media screen and (max-width: 540px) {
-   /* .topnav {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-   } */
-   /* .header-logo {
-     display: flex;
-     align-items: center;
-     height: 100%;
-   } */
-   /* .header-logo a {
-    height: 100%; 
-   } */
+   .topnav {
+     padding: 0 2vw 0 3.1vw;
+   }
    .header-logo img {
     padding-top: 18%;
     width: 103px;
@@ -519,6 +509,7 @@ footer {
   .hero-text {
     width: unset;
     font-size: 0.812rem;
+    margin-top: 27px;
   }
   .hero-img img {
     border-radius: 10px;
@@ -534,6 +525,13 @@ footer {
     text-align: center;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .hero-headline {
+    font-size: 2.7rem;
+    font-weight: bold;
+  }
+} 
 
 @keyframes modalopen {
   from {
