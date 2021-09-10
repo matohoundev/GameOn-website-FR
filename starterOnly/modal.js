@@ -15,7 +15,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 //DOM Elements for form 
 const formData = document.querySelectorAll(".formData");
 const firstName = document.querySelector("#first");
-const lastName = document.querySelector("#first");
+const lastName = document.querySelector("#last");
 
 // console.log(firstName);
 
@@ -63,6 +63,8 @@ lastName.addEventListener("change", (e) => {
     console.log("c'est parfait");
   }
 });
+
+
 
 // Validate form
 function validate(e) {
