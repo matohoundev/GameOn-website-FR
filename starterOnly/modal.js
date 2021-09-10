@@ -16,6 +16,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const firstName = document.querySelector("#first");
 const lastName = document.querySelector("#last");
+const email = document.querySelector("#email");
 
 // console.log(firstName);
 
@@ -64,7 +65,19 @@ lastName.addEventListener("change", (e) => {
   }
 });
 
-
+email.addEventListener("change", (e) => {
+  console.log(email.value)
+  input = email.value;
+  if (input === "") {
+    console.log("vide");
+  }
+  else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)) {
+    console.log("l'email n'est pas valide");
+  }
+  else {
+    console.log("c'est parfait");
+  }
+});
 
 // Validate form
 function validate(e) {
