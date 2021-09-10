@@ -15,6 +15,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 //DOM Elements for form 
 const formData = document.querySelectorAll(".formData");
 const firstName = document.querySelector("#first");
+const lastName = document.querySelector("#first");
 
 // console.log(firstName);
 
@@ -38,6 +39,20 @@ function closeModal() {
 firstName.addEventListener("change", (e) => {
   console.log(firstName.value)
   input = firstName.value;
+  if (input === "") {
+    console.log("vide");
+  }
+  else if(input.length < 2) {
+    console.log("minimums 2 caractère");
+  }
+  else {
+    console.log("c'est parfait");
+  }
+});
+
+lastName.addEventListener("change", (e) => {
+  console.log(lastName.value)
+  input = lastName.value;
   if (input === "") {
     console.log("vide");
   }
