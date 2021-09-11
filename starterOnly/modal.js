@@ -13,13 +13,19 @@ const btnModalClose = document.querySelector(".close");
 const modalBtn = document.querySelectorAll(".modal-btn");
 
 //DOM Elements for form 
-const formData = document.querySelectorAll(".formData");
+const form = document.querySelector("form");
 const firstName = document.querySelector("#first");
 const lastName = document.querySelector("#last");
 const email = document.querySelector("#email");
 const quantityTournament = document.querySelector("#quantity");
+const location1 = document.querySelector("#location1");
+const location2 = document.querySelector("#location2");
+const location3 = document.querySelector("#location3");
+const location4 = document.querySelector("#location4");
+const location5 = document.querySelector("#location5");
+const location6 = document.querySelector("#location6");
 
-// console.log(firstName);
+// console.log(location1);
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -52,6 +58,7 @@ firstName.addEventListener("change", (e) => {
   }
 });
 
+// verify lastName
 lastName.addEventListener("change", (e) => {
   console.log(lastName.value)
   input = lastName.value;
@@ -66,6 +73,7 @@ lastName.addEventListener("change", (e) => {
   }
 });
 
+// verify email
 email.addEventListener("change", (e) => {
   console.log(email.value)
   input = email.value;
@@ -80,6 +88,7 @@ email.addEventListener("change", (e) => {
   }
 });
 
+// prohibited operators !! problème quand on copie les operator ils peuvent apparaitre
 quantityTournament.addEventListener("keydown", function(e) {
   const invalidChars = [
   "-",
@@ -92,6 +101,7 @@ quantityTournament.addEventListener("keydown", function(e) {
   }
 });
 
+// verify quantity tournament 
 quantityTournament.addEventListener("change", (e) => {
   console.log(quantityTournament.value)
   input = quantityTournament.value;
@@ -104,12 +114,18 @@ quantityTournament.addEventListener("change", (e) => {
   }
 });
 
-quantityTournament.addEventListener("input", (e) => {
-  e = e.replace(/[e\+\-]/gi, "");
-});
 
+// no page reloading
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+})
 
 // Validate form
-function validate(e) {
-  e.preventdefault();
+function validate() {
+
+  if (!location1.checked && !location2.checked && !location3.checked && !location4.checked && !location5.checked && !location6.checked) { 
+    console.log("Il faut choisir une villes")
+  } else {
+    console.log("c'est parfait");
+  }
 }
