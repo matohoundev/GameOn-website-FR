@@ -24,6 +24,7 @@ const location3 = document.querySelector("#location3");
 const location4 = document.querySelector("#location4");
 const location5 = document.querySelector("#location5");
 const location6 = document.querySelector("#location6");
+const generalCondition = document.querySelector("#checkbox1");
 
 // console.log(location1);
 
@@ -122,9 +123,15 @@ form.addEventListener('submit', (e) => {
 
 // Validate form
 function validate() {
-
+  // verify radio is checked
   if (!location1.checked && !location2.checked && !location3.checked && !location4.checked && !location5.checked && !location6.checked) { 
-    console.log("Il faut choisir une villes")
+    console.log("Il faut choisir une ville")
+  } else {
+    console.log("c'est parfait");
+  }
+    // verify checkbox is checked
+  if(!generalCondition.checked) {
+    console.log("Les conditions générales doivent être acceptées");
   } else {
     console.log("c'est parfait");
   }
