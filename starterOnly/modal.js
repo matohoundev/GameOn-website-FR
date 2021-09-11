@@ -17,6 +17,7 @@ const formData = document.querySelectorAll(".formData");
 const firstName = document.querySelector("#first");
 const lastName = document.querySelector("#last");
 const email = document.querySelector("#email");
+const quantityTournament = document.querySelector("#quantity");
 
 // console.log(firstName);
 
@@ -78,6 +79,35 @@ email.addEventListener("change", (e) => {
     console.log("c'est parfait");
   }
 });
+
+quantityTournament.addEventListener("keydown", function(e) {
+  const invalidChars = [
+  "-",
+  "+",
+  "e",
+];
+
+  if (invalidChars.includes(e.key)) {
+    e.preventDefault();
+  }
+});
+
+quantityTournament.addEventListener("change", (e) => {
+  console.log(quantityTournament.value)
+  input = quantityTournament.value;
+
+  if (input === "") {
+    console.log("vide");
+  }
+  else {
+    console.log("c'est parfait");
+  }
+});
+
+quantityTournament.addEventListener("input", (e) => {
+  e = e.replace(/[e\+\-]/gi, "");
+});
+
 
 // Validate form
 function validate(e) {
