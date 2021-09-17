@@ -46,47 +46,17 @@ function closeModal() {
 
 // verify firstName
 firstName.addEventListener("change", (e) => {
-  console.log(firstName.value)
-  input = firstName.value;
-  if (input === "") {
-    console.log("vide");
-  }
-  else if(input.length < 2) {
-    console.log("minimums 2 caractère");
-  }
-  else {
-    console.log("c'est parfait");
-  }
+  checkFirstName(e.target.value)
 });
 
 // verify lastName
 lastName.addEventListener("change", (e) => {
-  console.log(lastName.value)
-  input = lastName.value;
-  if (input === "") {
-    console.log("vide");
-  }
-  else if(input.length < 2) {
-    console.log("minimums 2 caractère");
-  }
-  else {
-    console.log("c'est parfait");
-  }
+  checkLastName(e.target.value)
 });
 
 // verify email
 email.addEventListener("change", (e) => {
-  console.log(email.value)
-  input = email.value;
-  if (input === "") {
-    console.log("vide");
-  }
-  else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)) {
-    console.log("l'email n'est pas valide");
-  }
-  else {
-    console.log("c'est parfait");
-  }
+ checkEmail(e.target.value)
 });
 
 // prohibited operators !! problème quand on copie les operator ils peuvent apparaitre
@@ -104,15 +74,7 @@ quantityTournament.addEventListener("keydown", function(e) {
 
 // verify quantity tournament 
 quantityTournament.addEventListener("change", (e) => {
-  console.log(quantityTournament.value)
-  input = quantityTournament.value;
-
-  if (input === "") {
-    console.log("vide");
-  }
-  else {
-    console.log("c'est parfait");
-  }
+  checkQuantityTournament(e.target.value)
 });
 
 
@@ -123,16 +85,6 @@ form.addEventListener('submit', (e) => {
 
 // Validate form
 function validate() {
-  // verify radio is checked
-  if (!location1.checked && !location2.checked && !location3.checked && !location4.checked && !location5.checked && !location6.checked) { 
-    console.log("Il faut choisir une ville")
-  } else {
-    console.log("c'est parfait");
-  }
-    // verify checkbox is checked
-  if(!generalCondition.checked) {
-    console.log("Les conditions générales doivent être acceptées");
-  } else {
-    console.log("c'est parfait");
-  }
+  checkRadio()
+  checkCheckbox()
 }
