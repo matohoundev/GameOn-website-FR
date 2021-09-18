@@ -7,6 +7,7 @@ function checkFirstName(input) {
       }
       else {
         console.log("c'est parfait");
+        return true;
       }
 }
 
@@ -20,6 +21,7 @@ function checkLastName(input) {
   }
   else {
     console.log("c'est parfait");
+    return true;
   }
 }
 
@@ -32,6 +34,7 @@ function checkEmail(input) {
       }
       else {
         console.log("c'est parfait");
+        return true;
       }
 }
 
@@ -41,6 +44,7 @@ function checkQuantityTournament(input) {
       }
       else {
         console.log("c'est parfait");
+        return true;
       }
 }
 
@@ -49,6 +53,7 @@ function checkRadio() {
         console.log("Il faut choisir une ville")
       } else {
         console.log("c'est parfait");
+        return true;
       }
 }
 
@@ -57,5 +62,6 @@ function checkCheckbox() {
         console.log("Les conditions générales doivent être acceptées");
       } else {
         console.log("c'est parfait");
+        return true;
       }
 }

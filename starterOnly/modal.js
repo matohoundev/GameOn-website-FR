@@ -17,6 +17,7 @@ const form = document.querySelector("form");
 const firstName = document.querySelector("#first");
 const lastName = document.querySelector("#last");
 const email = document.querySelector("#email");
+const birthdate = document.querySelector('#birthdate');
 const quantityTournament = document.querySelector("#quantity");
 const location1 = document.querySelector("#location1");
 const location2 = document.querySelector("#location2");
@@ -47,7 +48,7 @@ function closeModal() {
 // verify firstName
 firstName.addEventListener("change", (e) => {
   checkFirstName(e.target.value)
-});
+});  
 
 // verify lastName
 lastName.addEventListener("change", (e) => {
@@ -59,7 +60,9 @@ email.addEventListener("change", (e) => {
  checkEmail(e.target.value)
 });
 
-// prohibited operators !! problème quand on copie les operator ils peuvent apparaitre
+//verify birthdate
+
+
 quantityTournament.addEventListener("keydown", function(e) {
   const invalidChars = [
   "-",
@@ -85,6 +88,11 @@ form.addEventListener('submit', (e) => {
 
 // Validate form
 function validate() {
-  checkRadio()
-  checkCheckbox()
+
+  if(checkFirstName(firstName.value) && checkLastName(lastName.value) && checkEmail(email.value) && checkQuantityTournament(quantityTournament.value && checkRadio() && checkCheckbox()) === true ) {
+    console.log("Le formulaire est valide");
+  }
+  else {
+    console.log("Le formulaire est invalide");
+  }
 }
