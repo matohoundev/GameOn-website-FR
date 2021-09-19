@@ -1,3 +1,9 @@
+function isEmpty(input) {
+  if (input === "") {
+    return false
+  }
+}
+
 function minTwoChar(input) {
   if (input.length < 2) {
     return false
@@ -15,7 +21,7 @@ function checkFirstName(input) {
 }
 
 function checkLastName(input) {
-  if (input.length < 2) {
+  if (minTwoChar(input) === false) {
     lastNameError.setAttribute('data-error', 'Veuillez entrer 2 caractères ou plus pour ce champ');
     lastNameError.setAttribute('data-error-visible', 'true');
     } else {
@@ -36,7 +42,7 @@ function checkEmail(input) {
 }
 
 function checkBirthdate(input) {
-  if(input === "") {
+  if(isEmpty(input) === false) {
     birthdateError.setAttribute('data-error', 'Vous devez entrer une date de naissance valide.');
     birthdateError.setAttribute('data-error-visible', 'true');
   } else {
@@ -46,7 +52,7 @@ function checkBirthdate(input) {
 }
 
 function checkQuantityTournament(input) {
-    if (input === "") {
+    if (isEmpty(input) === false) {
       quantityTournamentError.setAttribute('data-error', 'Hey ! N\'oublie pas d\'inscrire ton nombre de participation');
       quantityTournamentError.setAttribute('data-error-visible', 'true');
       } else {
