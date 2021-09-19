@@ -48,22 +48,22 @@ function closeModal() {
 }
 
 // verify firstName
-firstName.addEventListener("change", (e) => {
+firstName.addEventListener("blur", (e) => {
   checkFirstName(e.target.value)
 });  
 
 // verify lastName
-lastName.addEventListener("change", (e) => {
+lastName.addEventListener("blur", (e) => {
   checkLastName(e.target.value)
 });
 
 // verify email
-email.addEventListener("change", (e) => {
+email.addEventListener("blur", (e) => {
  checkEmail(e.target.value)
 });
 
 //verify birthdate
-birthdate.addEventListener("change", (e) => {
+birthdate.addEventListener("blur", (e) => {
   console.log(e)
   checkBirthdate(e.target.value)
 })
@@ -81,7 +81,7 @@ quantityTournament.addEventListener("keydown", function(e) {
 });
 
 // verify quantity tournament 
-quantityTournament.addEventListener("change", (e) => {
+quantityTournament.addEventListener("blur", (e) => {
   checkQuantityTournament(e.target.value)
 });
 
