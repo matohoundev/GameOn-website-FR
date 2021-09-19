@@ -1,5 +1,11 @@
+function minTwoChar(input) {
+  if (input.length < 2) {
+    return false
+    }
+}
+
 function checkFirstName(input) {
-    if (input.length < 2) {
+    if (minTwoChar(input) === false) {
       firstNameError.setAttribute('data-error', 'Veuillez entrer 2 caractères ou plus pour ce champ');
       firstNameError.setAttribute('data-error-visible', 'true');
       } else {
@@ -52,7 +58,6 @@ function checkQuantityTournament(input) {
 function checkRadio() {
 
       for (let i = 0; i < allRadio.length; i++) {
-        console.log(allRadio.length)
         if(!allRadio[i].checked) {
           cities.setAttribute('data-error', 'Vous devez choisir une ville.');
           cities.setAttribute('data-error-visible', 'true');

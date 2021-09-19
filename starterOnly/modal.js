@@ -68,6 +68,7 @@ birthdate.addEventListener("blur", (e) => {
   checkBirthdate(e.target.value)
 })
 
+//block operator in input quantityTournament
 quantityTournament.addEventListener("keydown", function(e) {
   const invalidChars = [
   "-",
