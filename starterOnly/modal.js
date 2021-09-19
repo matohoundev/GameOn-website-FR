@@ -19,15 +19,17 @@ const lastName = document.querySelector("#last");
 const email = document.querySelector("#email");
 const birthdate = document.querySelector('#birthdate');
 const quantityTournament = document.querySelector("#quantity");
-const location1 = document.querySelector("#location1");
-const location2 = document.querySelector("#location2");
-const location3 = document.querySelector("#location3");
-const location4 = document.querySelector("#location4");
-const location5 = document.querySelector("#location5");
-const location6 = document.querySelector("#location6");
+const allRadio = document.querySelectorAll('input[name="location"]');
 const generalCondition = document.querySelector("#checkbox1");
 
-// console.log(location1);
+//DOM Elements for form error
+const firstNameError = document.querySelector('.first');
+const lastNameError = document.querySelector(".last");
+const emailError = document.querySelector(".email");
+const birthdateError = document.querySelector('.birthdate');
+const quantityTournamentError = document.querySelector(".quantity");
+const cities = document.querySelector(".cities");
+const generalConditionError = document.querySelector(".checkbox");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -61,7 +63,10 @@ email.addEventListener("change", (e) => {
 });
 
 //verify birthdate
-
+birthdate.addEventListener("change", (e) => {
+  console.log(e)
+  checkBirthdate(e.target.value)
+})
 
 quantityTournament.addEventListener("keydown", function(e) {
   const invalidChars = [
@@ -89,7 +94,7 @@ form.addEventListener('submit', (e) => {
 // Validate form
 function validate() {
 
-  if(checkFirstName(firstName.value) && checkLastName(lastName.value) && checkEmail(email.value) && checkQuantityTournament(quantityTournament.value && checkRadio() && checkCheckbox()) === true ) {
+  if(checkFirstName(firstName.value) && checkLastName(lastName.value) && checkEmail(email.value) && checkBirthdate(birthdate.value) && checkQuantityTournament(quantityTournament.value) && checkRadio() && checkCheckbox() === true ) {
     console.log("Le formulaire est valide");
   }
   else {
