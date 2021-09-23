@@ -42,10 +42,19 @@ function checkEmail(input) {
 }
 
 function checkBirthdate(input) {
+
+  let today = new Date();
+  let year = today.getFullYear();
+
   if(isEmpty(input) === false) {
     birthdateError.setAttribute('data-error', 'Vous devez entrer une date de naissance valide.');
     birthdateError.setAttribute('data-error-visible', 'true');
-  } else {
+  } 
+  else if (input.slice(0, 4) > year - 16) {
+    birthdateError.setAttribute('data-error', 'Vous devez avoir plus de 16 ans.');
+    birthdateError.setAttribute('data-error-visible', 'true');
+  }
+    else {
     birthdateError.setAttribute('data-error-visible', 'false');
     return true;
   }
