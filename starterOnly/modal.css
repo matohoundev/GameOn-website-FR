@@ -193,6 +193,10 @@ main {
   margin: 15px auto;
 }
 
+.modal-end {
+  display: none;
+}
+
 label {
   font-family: var(--font-default);
   font-size: 17px;

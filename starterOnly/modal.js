@@ -31,6 +31,12 @@ const quantityTournamentError = document.querySelector(".quantity");
 const cities = document.querySelector(".cities");
 const generalConditionError = document.querySelector(".checkbox");
 
+// DOM Elements form validate
+const btnSubmit = document.querySelector(".btn-submit");
+const content = document.querySelector(".content");
+const modalBody = document.querySelector(".modal-body");
+const modalEnd = document.querySelector(".modal-end");
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
@@ -97,6 +103,7 @@ function validate() {
 
   if(checkFirstName(firstName.value) && checkLastName(lastName.value) && checkEmail(email.value) && checkBirthdate(birthdate.value) && checkQuantityTournament(quantityTournament.value) && checkRadio() && checkCheckbox() === true ) {
     console.log("Le formulaire est valide");
+    btnSubmit.value = "Fermer";
   }
   else {
     console.log("Le formulaire est invalide");
