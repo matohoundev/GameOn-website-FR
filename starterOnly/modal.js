@@ -22,7 +22,7 @@ const quantityTournament = document.querySelector("#quantity");
 const allRadio = document.querySelectorAll('input[name="location"]');
 const generalCondition = document.querySelector("#checkbox1");
 
-//DOM Elements for form error
+//DOM Elements use for form error
 const firstNameError = document.querySelector('.first');
 const lastNameError = document.querySelector(".last");
 const emailError = document.querySelector(".email");
@@ -31,10 +31,9 @@ const quantityTournamentError = document.querySelector(".quantity");
 const cities = document.querySelector(".cities");
 const generalConditionError = document.querySelector(".checkbox");
 
-// DOM Elements form validate
+// DOM Elements use form validate
 const btnSubmit = document.querySelector(".btn-submit");
-const content = document.querySelector(".content");
-const modalBody = document.querySelector(".modal-body");
+const formData = document.querySelectorAll(".formData");
 const modalEnd = document.querySelector(".modal-end");
 
 // launch modal event
@@ -43,9 +42,12 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 //close modal event
 btnModalClose.addEventListener('click', closeModal);
 
+let formHeight = '';
+
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  formHeight = form.offsetHeight;
 }
 
 // close modal form
@@ -92,7 +94,6 @@ quantityTournament.addEventListener("blur", (e) => {
   checkQuantityTournament(e.target.value)
 });
 
-
 // no page reloading
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -102,8 +103,7 @@ form.addEventListener('submit', (e) => {
 function validate() {
 
   if(checkFirstName(firstName.value) && checkLastName(lastName.value) && checkEmail(email.value) && checkBirthdate(birthdate.value) && checkQuantityTournament(quantityTournament.value) && checkRadio() && checkCheckbox() === true ) {
-    console.log("Le formulaire est valide");
-    btnSubmit.value = "Fermer";
+    formEnd()
   }
   else {
     console.log("Le formulaire est invalide");

@@ -195,6 +195,10 @@ main {
 
 .modal-end {
   display: none;
+  width: 70%;
+  font-size: 36;
+  font-weight: normal;
+  text-align: center;
 }
 
 label {
@@ -217,6 +221,14 @@ input {
   font-size: 20px;
   height: 48px;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -234,6 +246,10 @@ input {
 }
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
+}
+
+.formDelete {
+  display: none;
 }
 
 input[data-error]::after {
@@ -543,4 +559,3 @@ footer {
     opacity: 1;
   }
 }
-

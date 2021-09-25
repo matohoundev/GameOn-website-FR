@@ -92,3 +92,24 @@ function checkCheckbox() {
         return true;
       }
 }
+
+function formEnd() {
+  btnSubmit.value = "Fermer";
+
+  btnSubmit.addEventListener('click', closeModal);
+
+  // delete content form 
+
+  for(let i = 0; i < formData.length; i++) {
+    formData[i].classList.replace("formData", "formDelete");
+  }
+
+  // add text thanks and adjust height for text
+  form.classList.add("form");
+
+  form.style.height = `${formHeight}`;
+
+  modalEnd.style.padding = `${formHeight / 2.5}px 0`;
+
+  modalEnd.style.display = "block";
+}
