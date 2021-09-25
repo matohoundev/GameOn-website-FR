@@ -71,13 +71,12 @@ function checkQuantityTournament(input) {
 }
 
 function checkRadio() {
-
       for (let i = 0; i < allRadio.length; i++) {
         if(!allRadio[i].checked) {
           cities.setAttribute('data-error', 'Vous devez choisir une ville.');
           cities.setAttribute('data-error-visible', 'true');
         } else {
-        cities.setAttribute('data-error-visible', 'false');
+          cities.setAttribute('data-error-visible', 'false');
         return true;
       }
     }
@@ -99,7 +98,6 @@ function formEnd() {
   btnSubmit.addEventListener('click', closeModal);
 
   // delete content form 
-
   for(let i = 0; i < formData.length; i++) {
     formData[i].classList.replace("formData", "formDelete");
   }

@@ -31,7 +31,7 @@ const quantityTournamentError = document.querySelector(".quantity");
 const cities = document.querySelector(".cities");
 const generalConditionError = document.querySelector(".checkbox");
 
-// DOM Elements use form validate
+// DOM Elements use for form validate
 const btnSubmit = document.querySelector(".btn-submit");
 const formData = document.querySelectorAll(".formData");
 const modalEnd = document.querySelector(".modal-end");
@@ -105,7 +105,14 @@ function validate() {
   if(checkFirstName(firstName.value) && checkLastName(lastName.value) && checkEmail(email.value) && checkBirthdate(birthdate.value) && checkQuantityTournament(quantityTournament.value) && checkRadio() && checkCheckbox() === true ) {
     formEnd()
   }
-  else {
-    console.log("Le formulaire est invalide");
-  }
+  //  to show all the errors at the same time
+  // else {
+  //   checkFirstName(firstName.value) 
+  //   checkLastName(lastName.value) 
+  //   checkEmail(email.value)  
+  //   checkBirthdate(birthdate.value)  
+  //   checkQuantityTournament(quantityTournament.value)  
+  //   checkRadio()  
+  //   checkCheckbox()
+  // }
 }
