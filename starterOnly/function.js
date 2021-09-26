@@ -54,6 +54,10 @@ function checkBirthdate(input) {
     birthdateError.setAttribute('data-error', 'Vous devez avoir plus de 16 ans.');
     birthdateError.setAttribute('data-error-visible', 'true');
   }
+  else if (input.slice(0, 4) < year - 200) {
+    birthdateError.setAttribute('data-error', 'Plus de 200 ans, sérieusement ?');
+    birthdateError.setAttribute('data-error-visible', 'true');
+  }
     else {
     birthdateError.setAttribute('data-error-visible', 'false');
     return true;
